@@ -1,0 +1,10 @@
+[33m1286a81[m[33m ([m[1;36mHEAD -> [m[1;32mmain-lp[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m fix: find userid error when set model whitelist
+[33mb505d6a[m fix: return error when user not exist
+[33m5c3aed0[m build: add makefile
+[33mf22db33[m fix: all api use the same userid
+[33m66effe8[m feat: support log stdout
+[33me2fab26[m refactor: error code
+[33m1b44b0f[m refactor: unified the error codes
+[33m2b85c13[m feat: add max_exec_per_user for periodic strategy
+[33md3b5afb[m feat: add QueryUserPermission api
+[33m71ecb1b[m feat: add new query api

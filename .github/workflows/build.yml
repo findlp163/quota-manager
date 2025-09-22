@@ -7,6 +7,10 @@ on:
 
 jobs:
   build-and-push:
+    name: Debug secrets  # 临时用，验证完就删
+    run: |
+      echo "usr=${{ secrets.DOCKERHUB_USERNAME }}"
+      echo "tok=${{ secrets.DOCKERHUB_TOKEN }}"
     name: Build And Push
     runs-on: ubuntu-latest
     needs: []

@@ -3,25 +3,28 @@ server:
   mode: "debug"
   token_header: "authorization"
 
+timezone: "Asia/Shanghai"  # Beijing Time (UTC+8)
+
 database:
-  host: "127.0.0.1"
-  port: 5432
-  user: "keycloak"
-  password: "sf2025~SHENMA"
+  host: "192.168.255.113"
+  port: 15432
+  user: "postgres"
+  password: "shenma"
   dbname: "quota_manager"
   sslmode: "disable"
 
+
 auth_database:
-  host: "127.0.0.1"
-  port: 5432
-  user: "keycloak"
-  password: "sf2025~SHENMA"
+  host: "192.168.255.113"
+  port: 15432
+  user: "postgres"
+  password: "shenma"
   dbname: "auth"
   sslmode: "disable"
 
 aigateway:
   host: "127.0.0.1"
-  port: 8002
+  port: 1002
   admin_path: "/v1/chat/completions/quota"
   auth_header: "x-admin-key"
   auth_value: "12345678"
