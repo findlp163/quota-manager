@@ -261,6 +261,7 @@ func runAllTests(ctx *TestContext) []TestResult {
 
 		// ExpiryDays Strategy Tests
 		{"ExpiryDays Strategy Test", testExpiryDaysStrategy},
+		{"ExpiryDays Quota Expiry Test", testExpiryDaysQuotaExpiry},
 
 		// Invitation Reward Strategy Tests
 		{"Invite Register Reward Test", testStrategyInviteRegister},
