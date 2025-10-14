@@ -918,10 +918,19 @@ func (s *QuotaService) ExpireQuotas() error {
 
 		remainingQuota := totalQuota - usedQuota
 
-		// Reset used quota first
-		if err := s.aiGatewayClient.DeltaUsedQuota(userID, -usedQuota); err != nil {
+		// Adjust used quota
+		// Calculate new used quota after expiry
+		var newUsedQuota float64
+		if usedQuota > expiredAmount {
+			newUsedQuota = usedQuota - expiredAmount
+		} else {
+			newUsedQuota = 0
+		}
+
+		deltaUsed := newUsedQuota - usedQuota
+		if err := s.aiGatewayClient.DeltaUsedQuota(userID, deltaUsed); err != nil {
 			tx.Rollback()
-			return fmt.Errorf("failed to reset used quota for user %s: %w", userID, err)
+			return fmt.Errorf("failed to adjust used quota for user %s: %w", userID, err)
 		}
 
 		// Adjust total quota
