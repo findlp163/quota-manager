@@ -37,7 +37,7 @@ func testExpiryDaysQuotaExpiry(ctx *TestContext) TestResult {
 
 	// Scenario 2: Used quota < Expired quota (30 < 100)
 	// User2: Quota 100(expired) + Quota 80(valid), Used 30, Expected used quota 0, remaining quota 80
-	expiredQuota2, err := createExpiredTestQuota(ctx, user2.ID, 110.0)
+	expiredQuota2, err := createExpiredTestQuota(ctx, user2.ID, 100.0)
 	if err != nil {
 		return TestResult{Passed: false, Message: fmt.Sprintf("Create user2 expired quota failed: %v", err)}
 	}
